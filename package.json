@@ -1,0 +1,19 @@
+{
+  "name": "mobile-serp-intelligence-api-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Monorepo for Mobile SERP Intelligence API and Dashboard.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "lint": "echo 'Lint not configured yet'",
+    "test": "echo 'Test suite not configured yet'",
+    "dev:api": "npm run dev --workspace @mobile-serp/api",
+    "dev:dashboard": "npm run dev --workspace @mobile-serp/dashboard"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

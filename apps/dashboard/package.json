@@ -1,0 +1,9 @@
+{
+  "name": "@mobile-serp/dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Dashboard scaffold pending'",
+    "build": "echo 'Dashboard build pending'"
+  }
+}
