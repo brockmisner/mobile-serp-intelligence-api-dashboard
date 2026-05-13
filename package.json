@@ -1,19 +1,27 @@
 {
-  "name": "mobile-serp-intelligence-api-dashboard",
+  "name": "mobile-serp-intelligence-api",
   "version": "0.1.0",
   "private": true,
-  "description": "Monorepo for Mobile SERP Intelligence API and Dashboard.",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "type": "module",
   "scripts": {
-    "lint": "echo 'Lint not configured yet'",
-    "test": "echo 'Test suite not configured yet'",
-    "dev:api": "npm run dev --workspace @mobile-serp/api",
-    "dev:dashboard": "npm run dev --workspace @mobile-serp/dashboard"
+    "start": "node src/server.js",
+    "build": "npm run lint",
+    "ci:verify": "npm run lint && npm run test && npm run build",
+    "lint": "node --check src/*.js src/middleware/*.js src/routes/*.js tests/*.js apps/api/src/*.js apps/api/src/controllers/*.js apps/api/src/routes/*.js apps/api/src/routes/v1/*.js packages/shared/src/*.js",
+    "test": "vitest run tests/auth.integration.test.js tests/app.integration.test.js",
+    "test:all": "vitest run",
+    "test:watch": "vitest tests/auth.integration.test.js tests/app.integration.test.js",
+    "deploy": "node scripts/deploy.mjs",
+    "smoke": "node scripts/smoke-test.mjs",
+    "test:smoke:deployment": "node tests/deployment.smoke.js"
   },
-  "engines": {
-    "node": ">=20.0.0"
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "supertest": "^7.1.1",
+    "vitest": "^2.1.1"
   }
 }

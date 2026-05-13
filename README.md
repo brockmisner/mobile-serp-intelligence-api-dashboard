@@ -24,6 +24,15 @@ This repository is organized as a JavaScript workspace monorepo with separate ar
    npm run lint
    npm run test
    ```
+3. Read the user onboarding guide:
+   - [docs/GETTING_STARTED.md](docs/GETTING_STARTED.md)
+4. Review deployment automation and rollback runbook:
+   - [docs/ci-cd.md](docs/ci-cd.md)
+
+## Testing
+
+- `npm run test` runs the Vitest integration suite in `tests/`.
+- `npm run test:watch` runs tests in watch mode for local development.
 
 ## Next Steps
 
